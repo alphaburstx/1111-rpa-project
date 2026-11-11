@@ -1,0 +1,6 @@
+{
+  "category": ["image", "poster"],
+  "filters": [
+    { "group": "creator", "dimension": "format", "options": ["short"] }
+  ]
+}

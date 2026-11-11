@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>素材目录筛选</title>
+  <style>
+    :root { color-scheme: light; font-family: system-ui, sans-serif; color: #172c28; background: #f3f6f2; }
+    body { max-width: 850px; margin: 44px auto; padding: 0 24px; }
+    h1 { margin-bottom: 8px; }
+    p { color: #465954; }
+    button { cursor: pointer; padding: 9px 12px; border: 1px solid #c5d3c9; border-radius: 6px; background: #fff; color: inherit; font: inherit; }
+    button:hover, button[aria-current="true"] { background: #e2f2e8; }
+    button:focus-visible { outline: 2px solid #216c55; }
+    .toolbar, #columns, #dimensions, #options { display: flex; flex-wrap: wrap; gap: 8px; }
+    #columns { flex-wrap: nowrap; overflow-x: auto; }
+    #category-picker, #filter-picker, #selection-card { margin-top: 16px; padding: 16px; border: 1px solid #d6e2d7; border-radius: 10px; background: #fff; }
+    [data-level] { display: flex; flex-direction: column; align-items: stretch; gap: 5px; min-width: 125px; }
+    [data-level] button { text-align: left; }
+    .picker-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+    #options { margin-top: 12px; }
+    #filter-status[data-state="failed"] { color: #9a2929; }
+    label { display: inline-flex; gap: 5px; align-items: center; padding: 6px; }
+  </style>
+</head>
+<body>
+  <h1>素材目录筛选</h1>
+  <p>悬浮打开下级菜单，点击叶子类目。筛选可按维度切换。</p>
+  <div class="toolbar">
+    <button data-category-toggle>素材类目</button>
+    <button data-filter-group="creator">创作者</button>
+    <button data-filter-group="audience">受众</button>
+    <button data-filter-group="source">来源</button>
+  </div>
+  <section id="category-picker" hidden>
+    <div class="picker-header"><strong>素材类目</strong><button data-category-close>关闭类目</button></div>
+    <div id="columns" data-state="ready"></div>
+  </section>
+  <section id="filter-picker" hidden>
+    <div class="picker-header"><strong id="filter-heading"></strong><button data-filter-close>关闭筛选</button></div>
+    <div id="dimensions"></div>
+    <p id="filter-status" role="status"></p>
+    <div id="options"></div>
+  </section>
+  <section id="selection-card">
+    <strong>当前选择</strong>
+    <p id="category-selection">尚未选择类目</p>
+    <ul id="filter-selection"></ul>
+  </section>
+  <script type="module" src="/fixture.js"></script>
+</body>
+</html>

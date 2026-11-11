@@ -1,0 +1,8 @@
+{
+  "categoryPath": ["video", "review", "field", "outdoor"],
+  "filters": [
+    { "group": "creator", "dimension": "format", "options": ["short", "long"] },
+    { "group": "creator", "dimension": "style", "options": ["documentary"] },
+    { "group": "audience", "dimension": "region", "options": ["north", "west"] }
+  ]
+}

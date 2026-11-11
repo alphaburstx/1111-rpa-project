@@ -1,0 +1,18 @@
+{
+  "name": "multilevel-filter-replay",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "scripts": {
+    "start": "node src/fixture.mjs",
+    "catalog": "node src/cli.ts catalog",
+    "replay": "node src/cli.ts replay",
+    "check": "node --check src/cli.ts && node --check src/collector.ts && node --check src/fixture.mjs && node --check public/fixture.js"
+  },
+  "dependencies": {
+    "playwright-core": "1.65.0"
+  }
+}
